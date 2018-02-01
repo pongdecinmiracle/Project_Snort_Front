@@ -1,0 +1,107 @@
+/* ---- reset ---- */
+
+body {
+    margin: 0;
+    background-color: #f1f1f1;
+    text-align: center;
+    color:#888888;
+    font-family: Helvetica;
+  }
+  
+.background{
+    margin: 1%;
+    color: burlywood;
+    border-radius: 6px;
+}
+.fonttext{
+    margin-top: 3%;
+    text-align: center;
+    color:#888888;
+    font-family: Helvetica;
+    font-size: 70px;
+    border-radius: 6px;
+}
+
+.shape {
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 0%;
+    padding: 30px;
+    background-color: salmon;
+    text-align: center;
+    color:#888888;
+    font-family: Helvetica;
+    border-radius: 6px;
+}
+#text{
+    width: 120px;
+    border-radius: 3px;
+}
+#headermessage{
+    width: 580px;
+    border-radius: 3px;
+}
+.ip{
+    margin-top: 4px;
+    margin-left: 8%;
+    margin-right: 0%;
+    padding: 25px;
+    background-color: aquamarine;
+    text-align: center;
+    color:#888888;
+    font-family: Helvetica;
+    border-radius: 6px;
+}
+.tcp{
+    margin-top: 4px;
+    margin-left: -25px;
+    margin-right: 8%;
+    padding: 20px;
+    background-color: aquamarine;
+    text-align: center;
+    color:#888888;
+    font-family: Helvetica;
+    border-radius: 6px;
+}
+.pin{
+    width: 10px;
+
+}
+.icmp{
+    margin-top: -35px;
+    margin-left: 8%;
+    margin-right: 0%;
+    padding: 24px;
+    background-color: silver;
+    text-align: center;
+    color:#888888;
+    font-family: Helvetica;
+    border-radius: 6px;
+}
+.udp{
+    margin-top: 4px;
+    margin-right: 8%;
+    margin-left: -25px;
+    padding: 20px;
+    background-color: thistle;
+    text-align: center;
+    color:#888888;
+    font-family: Helvetica;
+    border-radius: 6px;
+}
+
+.submit {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+ 

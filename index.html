@@ -315,7 +315,7 @@
 														if(hash_pass_regist){
 															$(document).ready(function(){
 																
-																$.post("http://localhost:3001/register", 
+																$.post("202.28.153.35:3001/register", 
 																{
 																	Email: email_regist,
 																	Username: username_regist,
@@ -366,7 +366,7 @@
 														// console.log(hash_pass_regist)
 														if(password_login_hash){
 															$(document).ready(function(){
-																$.post("http://localhost:3001/login", 
+																$.post("202.28.153.35:3001/login", 
 																{
 																	Username: username_login,
 																	Pass: password_login_hash
@@ -379,7 +379,7 @@
 																			window.location.href = 'dashboard.html'
 																		}else{
 																			alert(res.message+ "Please Try Again")
-																			window.location.href = 'login.html' // --> index.html
+																			window.location.href = 'index.html' // --> index.html
 																		}
 
 																	}), function(error){
@@ -414,7 +414,7 @@
 						console.log('Request finished. Do processing here');
 					}
 					
-					xhttp.open('POST', 'http://localhost:3001/login', true)
+					xhttp.open('POST', '202.28.153.35:3001/login', true)
 					xhttp.setRequestHeader('Content-Type', 'application/json')
 					xhttp.send(JSON.stringify({ data: sensorData }));
 			}

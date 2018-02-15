@@ -453,7 +453,7 @@
 
       function query(){
             $(document).ready(function(){
-                $.get("202.28.153.35:3001/profile", 
+                $.get("co-project1.eg.mahidol.ac.th:3001/profile", 
                 {}).then(function(res,status){
                         console.log(res)
 
@@ -517,13 +517,13 @@
 
         function myFunction() {
             $(document).ready(function(){
-                $.get("202.28.153.35:3001/profile", 
+                $.get("co-project1.eg.mahidol.ac.th:3001/profile", 
                 {}).then(function(res,status){
                     res.forEach(element => {
                         var status_am = document.getElementById(element.Email).value
                         console.log(status_am)
                         if(status_am==1){
-                            $.post("202.28.153.35:3001/profile",
+                            $.post("co-project1.eg.mahidol.ac.th:3001/profile",
                             {
                                 Email: element.Email,
                                 Username: element.Username,
@@ -532,7 +532,7 @@
                             })
                         }else if(status_am==2){
                             //Delete
-                            $.post("202.28.153.35:3001/profile/delete",
+                            $.post("co-project1.eg.mahidol.ac.th:3001/profile/delete",
                             {
                                 Email: element.Email,
                                 Username: element.Username,

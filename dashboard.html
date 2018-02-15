@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 		<!-- page specific plugin styles -->
-
+ 
 		<!-- text fonts -->
 		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
 
@@ -41,6 +41,14 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+		<style>
+				li.isHidden{
+					display : none
+				}
+				li.isHidden2{
+					display : none
+				}
+			</style>
 	</head>
 
 	<body class="no-skin">
@@ -203,7 +211,7 @@
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="dashboard.html">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> Dashboard </span>
 						</a>
@@ -211,6 +219,23 @@
 						<b class="arrow"></b>
 					</li>
 
+					<li class="isHidden">
+						<a href="admin.php">
+							<i class="menu-icon glyphicon glyphicon-user"></i>
+							Admin
+						</a>
+
+						<b class="arrow"></b>
+                    </li>
+
+                    <li class="isHidden2">
+                            <a href="verify.html">
+                                <i class="menu-icon glyphicon glyphicon-user"></i>
+                                Verify By Admin
+                            </a>
+    
+                            <b class="arrow"></b>
+                    </li>
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
@@ -233,7 +258,7 @@
 							</li>
 
 							<li class="">
-								<a href="jqgrid.html">
+								<a href="table_pi2.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Raspberry Pi 2
 								</a>
@@ -242,7 +267,7 @@
 							</li>
 							
 							<li class="">
-								<a href="tables.html">
+								<a href="table_pi3.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Raspberry Pi 3
 								</a>
@@ -269,7 +294,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="dashboard.html">Home</a>
 							</li>
 							<li class="active">Dashboard</li>
 						</ul><!-- /.breadcrumb -->
@@ -610,19 +635,41 @@
 
 			function check(){
 				console.log("check")
-				var Token = localStorage.getItem("token")
-				if(Token){
+				var token = localStorage.getItem("Token")
+				var admin = localStorage.getItem("Admin")
+				var status = localStorage.getItem("Status")
+				if(token){
 					console.log("pass")
+                    if(admin==0){
+                        
+                    }else if(admin==1){
+						if(status=="Admin"){
+							var hiddenInput = document.getElementsByClassName("isHidden")
+							var hiddenInput2 = document.getElementsByClassName("isHidden2")
+							// console.log(hiddenInput)
+							hiddenInput[0].style.display = "block"
+							hiddenInput2[0].style.display = "block"
+						}else if(status=="Visitor"){
+
+						}
+                        
+                    }
 				}else{
-					window.location.href= 'index.html'
-				}
-			}
+					window.location.href= 'login.html'
+                
+			    }
+            }
 
 
 			function logout(){
 				console.log("logout")
-				localStorage.removeItem("token");
-				window.location.href= 'index.html'
+				localStorage.removeItem("Token");
+				localStorage.removeItem("Status");
+				var admin = localStorage.getItem("Admin")
+				if(admin){
+					localStorage.removeItem("Admin");
+				}
+				window.location.href= 'login.html'
 			}
 
 

@@ -48,11 +48,11 @@
                         <input id="text"    name="classtype" placeholder="Class-Type"></input>
                         <select name="priority">
                             <option value="">Priority</option>
-                            <option value="priority:1;">1</option>
-                            <option value="priority:2;">2</option>
-                            <option value="priority:3;">3</option>
-                            <option value="priority:4;">4</option>
-                            <option value="priority:5;">5</option>
+                            <option value="priority:1">1</option>
+                            <option value="priority:2">2</option>
+                            <option value="priority:3">3</option>
+                            <option value="priority:4">4</option>
+                            <option value="priority:5">5</option>
                         </select>
                         <input id="text"    name="gid" placeholder="gid">
             </div>

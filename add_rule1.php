@@ -209,24 +209,58 @@
 
 						<b class="arrow"></b>
 					</li>
-
+					<!--  -->
 					<li class="isHidden">
-						<a href="admin.php">
-							<i class="menu-icon glyphicon glyphicon-user"></i>
-							Admin
-						</a>
+							<a href="#" class="dropdown-toggle">
+								<i class="menu-icon glyphicon glyphicon-user"></i>
+								<span class="menu-text"> Admin Modify </span>
+	
+								<b class="arrow fa fa-angle-down"></b>
+							</a>
+	
+							<b class="arrow"></b>
+	
+							<ul class="submenu">
+									<li class="">
+											<a href="add_rule1.php">
+												<i class="menu-icon glyphicon glyphicon-user"></i>
+												Add Rule : Raspberry Pi1
+											</a>
+					
+											<b class="arrow"></b>
+									</li>
+					
+									<li class="">
+											<a href="add_rule2.php">
+												<i class="menu-icon glyphicon glyphicon-user"></i>
+												Add Rule : Raspberry Pi2
+											</a>
+					
+											<b class="arrow"></b>
+									</li>
 
-						<b class="arrow"></b>
-                    </li>
+									<li class="">
+											<a href="add_rule3.php">
+												<i class="menu-icon glyphicon glyphicon-user"></i>
+												Add Rule : Raspberry Pi3
+											</a>
+					
+											<b class="arrow"></b>
+									</li>
 
-                    <li class="isHidden2">
-                            <a href="verify.html">
-                                <i class="menu-icon glyphicon glyphicon-user"></i>
-                                Verify By Admin
-                            </a>
-    
-                            <b class="arrow"></b>
-                    </li>
+									<li class="">
+												<a href="verify.html">
+													<i class="menu-icon glyphicon glyphicon-user"></i>
+													Verify By Admin
+												</a>
+						
+												<b class="arrow"></b>
+									</li>
+								
+							</ul>
+						</li>
+					<!--  -->
+
 
 					<li class="">
 						<a href="#" class="dropdown-toggle">
@@ -286,7 +320,7 @@
 							</li>
 
 							<li>
-								<a href="admin.php">Add rule</a>
+								<a href="add_rule1.php">Add Rule : Raspberry Pi 1</a>
 							</li>
 						</ul><!-- /.breadcrumb -->
 
@@ -304,17 +338,28 @@
 
 						<div class="page-header">
 							<h1>
-								Add Rule
+								Add Rule : Raspberry Pi 1
 							</h1>
 						</div><!-- /.page-header -->
 
-<!--  jQuery dataTables -->
+<!--  Body  -->
 								
-<form method="post" action="./snorpy_rule.php">  
+
   <!-- Name: <input type="text" name="name"> -->
- <h2>Add Rule</h2> 
+  <!-- Name: <input type="text" name="name"> -->
+  <form method="post" action="./snorpy_rule1.php">  
+ <div class="col-sm-12">
+
+	 <div class="col-sm-4">
+			<h2>Add Rule</h2> 
+	 </div>
+
+ </div>
   <div class="rulebody">
   <br><br>
+		<!-- Add Rule Basic -->
+		<div class="col-sm-12">
+				
                     <select id="action" name="action" >
                         <option value="">Action</option>
                         <option value="alert">alert</option>
@@ -344,36 +389,42 @@
                     <input  name="classtype" placeholder="Class-Type"></input>
                     <select name="priority">
                         <option value="">Priority</option>
-                        <option value="priority:1;">1</option>
-                        <option value="priority:2;">2</option>
-                        <option value="priority:3;">3</option>
-                        <option value="priority:4;">4</option>
-                        <option value="priority:5;">5</option>
+                        <option value="priority:1">1</option>
+                        <option value="priority:2">2</option>
+                        <option value="priority:3">3</option>
+                        <option value="priority:4">4</option>
+                        <option value="priority:5">5</option>
                     </select>
                     <input  name="gid" placeholder="gid">
                     <!-- This is the LEFT Main box holind protocol option box -->
-            
-                    <h4>IP</h4>
-                    <select name="ttlevaluator" >
-                        <option value="&gt;">&gt;</option>
-                        <option value="&lt;">&lt;</option>
-                        <option value="=">=</option>
-                        <option selected="selected" value="">TTL</option>
-                    </select>
-
-                    <input name="ttl" type="text" />
-                    </br></br></br>
-                    <select name="ipprotoevaluator" size="1">
-                        <option value="&gt;">&gt;</option>
-                        <option value="&lt;">&lt;</option>
-                        <option value="=">=</option>
-                        <option selected="selected" value="">IP PROTOCOL</option>
-                    </select>
-                    <input name="ipprotofield" type="text" />
-            
-                <!-- TCP Options -->
-                
-                    <h4>TCP</h4>
+		</div>
+		<!-- Add Rule : IP , TCP -->
+		<div class="col-sm-12">
+				<div class="col-sm-6">
+					<br><br>
+						<h4>IP</h4>
+						<select name="ttlevaluator" >
+							<option value="&gt;">&gt;</option>
+							<option value="&lt;">&lt;</option>
+							<option value="=">=</option>
+							<option selected="selected" value="">TTL</option>
+						</select>
+	
+						<input name="ttl" type="text" />
+						</br></br>
+						<select name="ipprotoevaluator" size="1">
+							<option value="&gt;">&gt;</option>
+							<option value="&lt;">&lt;</option>
+							<option value="=">=</option>
+							<option selected="selected" value="">IP PROTOCOL</option>
+						</select>
+						<input name="ipprotofield" type="text" />
+				
+					<!-- TCP Options -->
+			</div>
+			<div class="col-sm-6">
+				<br><br>
+					<h4>TCP</h4>
                     <select class="tcpinputs" id="httpmethodForm" >
                         <option value='content:"GET"; http_method;'>GET</option>
                         <option value='content:"POST"; http_method;'>POST</option>
@@ -426,11 +477,10 @@
                     <option value="504">504</option>
                     <option value="505">505</option>
                     <option selected="selected" value="">HTTP RESPONSE CODE</option>
-                    </select></br>
-                    </br></br>
-                    ACK
+					</select></br><br>
+					ACK
                     <input style="border-radius:5px; background-color:#f2f2f2; padding:3px;" id="ACK" class=" check2 opflags opflags" type="checkbox" value="A" />&nbsp;SYN<input id="SYN"  class=" check2 opflags" type="checkbox" value="S" />&nbsp;PSH<input id="PSH"  class=" check2 opflags" type="checkbox" value="P" />&nbsp;RST<input id="RST"  class=" check2 opflags" type="checkbox" value="R" />&nbsp;FIN<input id="FIN"  class=" check2 opflags" type="checkbox" value="F" />&nbsp;URG<input id="URG"  class=" check2 opflags" type="checkbox" value="U" />&nbsp;+<input id="flagplus" class=" check2 opflags flagoptions" type="checkbox" value="+" />&nbsp;*<input id="wildcard" class=" check2 opflags flagoptions" type="checkbox" value="*" /></br>
-                    </br></br>
+                    </br>
                     <select class="tcpinputs" id="tcpdirectionForm">
                         <option value="FROM_SERVER">FROM_SERVER</option>
                         <option value="TO_SERVER">TO_SERVER</option>
@@ -445,52 +495,170 @@
                         <option value="not_established">not_established</option>
                         <option selected="selected" value="">TCP STATE</option>
                     </select>
+			</div>
+		</div>
+		<!-- Add Rule : ICMP , UDP -->
+		<div class="col-sm-12">
+			<div class="col-sm-6">
+				<!-- UDP Options -->
                 
-                <!-- UDP Options -->
+			</br>
+			<h4>UDP</h4>
+					</br>
+					<select style="width: 60%;" id="udpdirectionForm">
+						<option value="FROM_SERVER">FROM_SERVER</option>
+						<option value="TO_SERVER">TO_SERVER</option>
+						<option value="TO_CLIENT">TO_CLIENT</option>
+						<option value="FROM_CLIENT">FROM_CLIENT</option>
+						<option selected="selected" value="">DIRECTION</option>
+					</select>
+			</div>
+			<div class="col-sm-6">
+					<!-- ICMP Options -->
                 
-                    </br></br></br><h4>UDP</h4>
-                    </br></br></br>
-                    <select style="width: 90%;" id="udpdirectionForm">
-                        <option value="FROM_SERVER">FROM_SERVER</option>
-                        <option value="TO_SERVER">TO_SERVER</option>
-                        <option value="TO_CLIENT">TO_CLIENT</option>
-                        <option value="FROM_CLIENT">FROM_CLIENT</option>
-                        <option selected="selected" value="">DIRECTION</option>
-                    </select>
+				</br><h4>ICMP</h4>
+				<select  class="tcpinputs" id="icmptypeevaluator">
+				<option value="&gt;">&gt;</option>
+				<option value="&lt;">&lt;</option>
+				<option value="=">=</option>
+				<option selected="selected" value="">ICMP TYPE</option>
+				</select>
+					<input  class="tcpinputs" id="icmptype" type="text" />
+					</br></br>
+				<select  class="tcpinputs" id="icmpcodeevaluator">
+					<option value="&gt;">&gt;</option>
+					<option value="&lt;">&lt;</option>
+					<option value="=">=</option>
+					<option selected="selected" value="">ICMP CODE</option>
+				</select>
+				<input  class="tcpinputs" id="icmpcode" type="text" />
+			</div>	
+		</div>
+		<!-- Add Rule : Submit -->
+		<div class="col-sm-12">
+			
+					<br><br><br><br>
+					<input type="submit" class="btn btn-secondary" style="border-radius: 6px;" name="submit" value="Submit" onclick="getRule()">  
+		</div>
                 
-                <!-- ICMP Options -->
-                
-                    </br></br></br><h4>ICMP</h4>
-                    <select  class="tcpinputs" id="icmptypeevaluator">
-                    <option value="&gt;">&gt;</option>
-                    <option value="&lt;">&lt;</option>
-                    <option value="=">=</option>
-                    <option selected="selected" value="">ICMP TYPE</option>
-                    </select>
-                        <input  class="tcpinputs" id="icmptype" type="text" />
-                        </br>
-                    </br></br></br>
-                    <select  class="tcpinputs" id="icmpcodeevaluator">
-                        <option value="&gt;">&gt;</option>
-                        <option value="&lt;">&lt;</option>
-                        <option value="=">=</option>
-                        <option selected="selected" value="">ICMP CODE</option>
-                    </select>
-                    <input  class="tcpinputs" id="icmpcode" type="text" />
-           
-
-                    
-    
-
-  <br><br>
-  <!-- Gender:
-  <input type="radio" name="gender" value="female">Female
-  <input type="radio" name="gender" value="male">Male
-  <br><br>
-  <input type="checkbox" name="ch" value="ch"></input> -->
-  <input type="submit" name="submit" value="Submit" onclick="getRule()">  
-  </div>
+		<!-- Add Rule : BlankSpace -->
+		<div class="col-sm-12">
+				<br><br><br><br>
+				<div class="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+				<br><br>
+		</div>
+		<!-- Add Rule : Manual -->
+		<div class="col-sm-12">
+			<h4>Manual Rule</h4>
+			<br><br>
+			Rule : 
+			<input style="width: 70%" type=" text" id="manual" name="manual" placeholder="Example : alert tcp 127.0.0.1 80 -> 127.0.0.1 80" >
+			<br><br>Type :
+			<input style="width: 20%" type=" text" id="type" name="type" placeholder="Example : action" >
+			<br><br>Protocol :
+			<input style="width: 20%" type=" text" id="protocolM" name="protocolM" placeholder="Example : TCP" >
+			<br><br>Signature ID :
+			<input style="width: 20%" type=" text" id="sig_id" name="sig_id" placeholder="Example : 10000001" >
+			<br><br>Detail Rule :
+			<input style="width: 66%" type=" text" id="msg" name="msg" placeholder="Example : Denial-of-service (Dos Attack)" >
+			<br>
+			<br><br>
+			<input type="submit" class="btn btn-secondary" style="border-radius: 6px;" name="submit" value="Submit" onclick="showRule()" >  			
+			
+		</div>
+		
+ </div>
 </form>
+
+<!-- Edit Rule (Drop & Alert) : Raspberry Pi 1 -->
+<div class="rulebody">
+    <form action="./snorpy_rule1.php" >
+        <!-- Add Rule : BlankSpace -->
+		<div class="col-sm-12">
+				<br><br><br><br>
+				<div class="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+				<br><br>
+		</div>
+        
+        <h4>Edit Rule : Raspberry Pi 1</h4>
+        <div class="col-sm-12">
+            <br><br> Type Action : 
+            <input style="width: 20%" type="text" name="type_action" id="type_action" placeholder="Example : action" >
+            <br><br> Signature ID : 
+            <input style="width: 20%" type="text" name="sid_edit" id="sid_edit" placeholder="Example : 10000001">
+            <br>
+			<br><br>
+			<input type="submit" class="btn btn-secondary" style="border-radius: 6px;" name="submit" value="Submit" onclick="editRule()" >  			
+			
+        </div>
+                    
+
+
+    </form>
+</div>
+<!-- Modify Rule : Raspberry Pi 1 -->
+<div class="rulebody">
+    <form action="./snorpy_rule1.php">
+        <!-- Add Rule : BlankSpace -->
+		<div class="col-sm-12">
+				<br><br><br><br>
+				<div class="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+				<br><br>
+		</div>
+        
+        <h4>Modify Rule Use/Unuse : Raspberry Pi 1</h4>
+        <div class="col-sm-12">
+            <br><br> Signature ID : 
+            <input style="width: 20%" type="text" name="sid_use" id="sid_use" placeholder="Example : 10000001">
+            <br>
+			<br><br>
+			<input type="submit" class="btn btn-secondary" style="border-radius: 6px;" name="submit" value="Submit" onclick="useRule()" >  			
+			
+        </div>
+        <!-- <h4>Modify Rule Use/Unuse : Raspberry Pi 1</h4> -->
+        <div class="col-sm-12">
+            <br><br> Signature ID : 
+            <input style="width: 20%" type="text" name="sid_use" id="sid_use" placeholder="Example : 10000001">
+            <br>
+			<br><br>
+			<input type="submit" class="btn btn-secondary" style="border-radius: 6px;" name="submit" value="Submit" onclick="useRule()" >  			
+			
+        </div>
+                    
+
+
+    </form>
+</div>
+
+<!-- Delete Rule : Raspberry Pi 1 -->
+<div class="rulebody">
+    <form action="./snorpy_rule1.php">
+        <!-- Add Rule : BlankSpace -->
+		<div class="col-sm-12">
+				<br><br><br><br>
+				<div class="center">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+				<br><br>
+		</div>
+        
+        <h4>Delete Rule : Raspberry Pi 1</h4>
+        <div class="col-sm-12">
+            <br><br> Signature ID : 
+            <input style="width: 20%" type="text" name="sid_delete" id="sid_delete" placeholder="Example : 10000001">
+            <br>
+			<br><br>
+			<input type="submit" class="btn btn-secondary" style="border-radius: 6px;" name="submit" value="Submit" onclick="deleteRule()" >  			
+			
+        </div>
+                    
+
+
+    </form>
+</div>
+		<!-- <button onclick="showRule()">Preview Rule</button> -->
+
+
+		<!-- <button onclick="showRule()">Preview Rule</button> -->
+
 
 								
 
@@ -566,18 +734,105 @@
 				var action = document.getElementById("action").value
 				var protocol = document.getElementById("protocol").value
 				var sid = document.getElementById("sid").value
+				var headermessage = document.getElementById("headermessage").value
+				var color = getRandomColor()
+				if(!sig_id || sig_id == null || sig_id == ""){
 
-				$.post("http://co-project1.eg.mahidol.ac.th/addrule", 
-						{action:action,protocol:protocol,sid:sid}).then(function(res,status){
-							console.log(res)
-							if(res.success=="true"){
-								alert(res.message)
+					}else{
+						var person = prompt("Please Confirm No. of Rule ID \""+sid+"\" :", "No. of Rule ID")
+						if (person == null || person == "" || person == "No. of Rule ID") {
+							// alert("Wrong Rule ID")
+							window.location.href = "add_rule1.php"
+						} else if(person==sid) {
+							if(!manual || manual == null || manual == 0){
+								console.log("err")
 							}else{
-								alert(res.message)
+								$.post("http://co-project1.eg.mahidol.ac.th/addrule", 
+									{Type:type,Protocol:protocol,Sig_id:sig_id,Color:color,Msg:msg,Manual:manual}).then(function(res,status){
+										console.log("pass")
+										if(res.success=="true"){
+											alert(res.message)
+											
+										}else{
+											alert(res.message)
+										}
+									})
 							}
-						})
+						}else{
+							window.location.href = "add_rule1.php"
+						}
+					}
+			}
+			
+			// function manualRule(){
+			// 	var type = document.getElementById("type").value
+			// 	var protocol = document.getElementById("protocolM").value
+			// 	var sig_id = document.getElementById("sig_id").value
+			// 	var manual = document.getElementById("manual").value
+			// 	var msg = document.getElementById("msg").value
+			// 	var color = getRandomColor()
+			// 	if(!manual || manual == null || manual == 0){
+			// 		console.log("err")
+			// 	}else{
+			// 		$.post("http://localhost:3001/addrule", 
+			// 			{Type:type,Protocol:protocol,Sig_id:sig_id,Color:color,Msg:msg,Manual:manual}).then(function(res,status){
+			// 				console.log("pass")
+			// 				if(res.success=="true"){
+			// 					alert(res.message)
+			// 				}else{
+			// 					alert(res.message)
+			// 				}
+			// 			})
+			// 	}
+				
+			// }
+			
+			function showRule(){
+				var type = document.getElementById("type").value
+				var protocol = document.getElementById("protocolM").value
+				var sig_id = document.getElementById("sig_id").value
+				var manual = document.getElementById("manual").value
+				var msg = document.getElementById("msg").value
+				var color = getRandomColor()
+				if(!sig_id || !type || !protocol || !manual || !msg || sig_id == null || sig_id == ""){
+					alert("Pls! make full fill")
+				}else{
+					var person = prompt("Please Confirm No. of Rule ID \""+sig_id+"\" :", "No. of Rule ID")
+					if (person == null || person == "" || person == "No. of Rule ID") {
+						// alert("Wrong Rule ID")
+						window.location.href = "add_rule1.php"
+					} else if(person==sig_id) {
+						if(!manual || manual == null || manual == 0){
+							console.log("err")
+						}else{
+							$.post("http://co-project1.eg.mahidol.ac.th/addrule", 
+								{Type:type,Protocol:protocol,Sig_id:sig_id,Color:color,Msg:msg,Manual:manual}).then(function(res,status){
+									console.log("pass")
+									if(res.success=="true"){
+										alert(res.message)
+										
+									}else{
+										alert(res.message)
+									}
+								})
+						}
+					}else{
+						window.location.href = "add_rule1.php"
+					}
+				}
+					
+				
 			}
 
+
+			function getRandomColor() {
+				var letters = '0123456789ABCDEF';
+				var color = '#';
+				for (var i = 0; i < 6; i++ ) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return color;
+			}
 
 			window.check()
 
@@ -589,14 +844,11 @@
 				if(token){
 					console.log("pass")
                     if(admin==0){
-                        
+                        window.location.href= 'login.html'
                     }else if(admin==1){
 						if(status=="Admin"){
-							var hiddenInput = document.getElementsByClassName("isHidden")
-							var hiddenInput2 = document.getElementsByClassName("isHidden2")
-							// console.log(hiddenInput)
-							hiddenInput[0].style.display = "block"
-							hiddenInput2[0].style.display = "block"
+							var hiddenInput = document.getElementsByClassName("isHidden") //admin menu
+							hiddenInput[0].style.display = "block"  //admin menu
 						}else if(status=="Visitor"){
 
 						}
@@ -607,6 +859,8 @@
                 
 			    }
             }
+
+
 			
 			function logout(){
 				console.log("logout")
@@ -620,11 +874,6 @@
 			}
 
 		</script>
-		
 
-
-        <script>
-
-        </script>
 	</body>
 </html>

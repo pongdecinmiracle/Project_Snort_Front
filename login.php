@@ -51,7 +51,7 @@
 							</div>
 
 							<div class="space-6"></div>
-<!-- Login -->
+
 							<div class="position-relative">
 								<div id="login-box" class="login-box visible widget-box no-border">
 									<div class="widget-body">
@@ -67,14 +67,14 @@
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" id="username_login" class="form-control" placeholder="Username" />
+															<input type="text" class="form-control" placeholder="Username" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" id="password_login" class="form-control" placeholder="Password" />
+															<input type="password" class="form-control" placeholder="Password" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
@@ -87,7 +87,7 @@
 															<span class="lbl"> Remember Me</span>
 														</label>
 
-														<button type="button" class="width-35 pull-right btn btn-sm btn-primary" onclick="getLogin()">
+														<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
 															<i class="ace-icon fa fa-key"></i>
 															<span class="bigger-110">Login</span>
 														</button>
@@ -112,14 +112,14 @@
 
 											<div>
 												<a href="#" data-target="#signup-box" class="user-signup-link">
-													Register
+													Registers
 													<i class="ace-icon fa fa-arrow-right"></i>
 												</a>
 											</div>
 										</div>
 									</div><!-- /.widget-body -->
 								</div><!-- /.login-box -->
-<!-- Forgot Password -->
+
 								<div id="forgot-box" class="forgot-box widget-box no-border">
 									<div class="widget-body">
 										<div class="widget-main">
@@ -161,8 +161,6 @@
 									</div><!-- /.widget-body -->
 								</div><!-- /.forgot-box -->
 
-<!-- Register -->
-
 								<div id="signup-box" class="signup-box widget-box no-border">
 									<div class="widget-body">
 										<div class="widget-main">
@@ -178,31 +176,32 @@
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="email" id="email_regist" class="form-control" placeholder="Email" />
+															<input type="email" class="form-control" placeholder="Email" />
 															<i class="ace-icon fa fa-envelope"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" id="username_regist" class="form-control" placeholder="Username" />
+															<input type="text" class="form-control" placeholder="Username" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" id="pass_regist" class="form-control" placeholder="Password" />
+															<input type="password" class="form-control" placeholder="Password" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" id="repeat_pass_regist" class="form-control" placeholder="Repeat password" />
+															<input type="password" class="form-control" placeholder="Repeat password" />
 															<i class="ace-icon fa fa-retweet"></i>
 														</span>
 													</label>
+
 
 													<div class="space-24"></div>
 
@@ -212,7 +211,7 @@
 															<span class="bigger-110">Reset</span>
 														</button>
 
-														<button type="button" class="width-65 pull-right btn btn-sm btn-success" onclick="getRegister()">
+														<button type="button" class="width-65 pull-right btn btn-sm btn-success">
 															<span class="bigger-110">Register</span>
 
 															<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
@@ -256,31 +255,25 @@
 
 		<!--[if !IE]> -->
 		<script src="assets/js/jquery-2.1.4.min.js"></script>
-		<script src="./js/ace-extra.min.js"></script>
-		<script src="./js/jquery-2.1.4.min.js"></script>
-		<script src="./js/bootstrap.min.js"></script>
-		<script src="./js/jquery-ui.custom.min.js"></script>
-		<script src="./js/jquery.ui.touch-punch.min.js"></script>
-		<script src="./js/jquery.easypiechart.min.js"></script>
-		<script src="./js/jquery.sparkline.index.min.js"></script>
-		<script src="./js/jquery.flot.min.js"></script>
-		<script src="./js/jquery.flot.pie.min.js"></script>
-		<script src="./js/jquery.flot.resize.min.js"></script>
-		<script src="./js/ace-elements.min.js"></script>
-		<script src="./js/ace.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		
+
 		<!-- <![endif]-->
 
 		<!--[if IE]>
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
+
+		<?php
+			$connection = new MongoClient( "localhost:27017" );
+			echo "success"
+		?>
+
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
+		
 			jQuery(function($) {
 			 $(document).on('click', '.toolbar a[data-target]', function(e) {
 				e.preventDefault();
@@ -289,155 +282,6 @@
 				$(target).addClass('visible');//show target
 			 });
 			});
-			
-			function getRegister(){
-					var email_regist = document.getElementById("email_regist").value
-					var username_regist = document.getElementById("username_regist").value
-					var pass_regist = document.getElementById("pass_regist").value
-					var repeat_pass_regist = document.getElementById("repeat_pass_regist").value
-					var hash_pass_regist
-					if(email_regist){
-						if(username_regist){
-								if(pass_regist){
-									if(pass_regist==repeat_pass_regist){
-
-										$(document).ready(function(){
-											$.ajax({
-												type: "POST",
-												url: "hash2.php",
-												data: "toHash="+pass_regist,
-												success: function(result){
-													if(pass_regist == ""){
-														hash_pass_regist = "";
-													} else {
-														hash_pass_regist = result;
-														// console.log(hash_pass_regist)
-														if(hash_pass_regist){
-															$(document).ready(function(){
-																
-																$.post("http://co-project1.eg.mahidol.ac.th/register", 
-																{
-																	Email: email_regist,
-																	Username: username_regist,
-																	Pass: hash_pass_regist
-																})
-																
-															});
-															window.location.href = 'login.html'
-
-														}
-													}
-													
-												}
-											})
-										})
-
-									}else{
-										alert("Repeat Password does't Fill!!\n Please Try Again!!")
-									}
-								}else{
-									alert("Password does't Fill!!\n Please Try Again!!")
-								}
-						}else{
-							alert("Username does't Fill!!\n Please Try Again!!")
-						}
-					}else{
-						alert("Email does't Fill!!\n Please Try Again!!")
-					}
-					
-			}
-
-			function getLogin(){
-				var username_login = document.getElementById("username_login").value
-				var password_login = document.getElementById("password_login").value
-				var password_login_hash
-				if(username_login){
-					if(password_login){
-						$(document).ready(function(){
-											$.ajax({
-												type: "POST",
-												url: "hash2.php",
-												data: "toHash="+password_login,
-												success: function(result){
-													if(password_login == ""){
-														password_login_hash = "";
-													} else {
-														password_login_hash = result;
-														// console.log(hash_pass_regist)
-														if(password_login_hash){
-															$(document).ready(function(){
-																$.post("http://co-project1.eg.mahidol.ac.th/login", 
-																{
-																	Username: username_login,
-																	Pass: password_login_hash
-																}).then(function(res){
-																		// console.log("successfully");
-																		// console.log(res.success)
-																		console.log(res)
-																		if(res.success==true){
-																			if(res.status=="Require"){
-																				alert("This ID Can't Login NOW! \n Please Waiting for Pre-Active")
-																				window.location.href = 'login.html'
-
-																			}else if(res.status=="Admin"){
-																				console.log("is true")
-																				localStorage.setItem("Token", res.token);
-																				localStorage.setItem("Admin", res.admin);
-																				localStorage.setItem("Status", res.status);
-																				window.setTimeout(3000);
-																				window.location.href = 'dashboard.html'
-																		}else if(res.status=="Visitor"){
-																				console.log("is true")
-																				localStorage.setItem("Token", res.token);
-																				localStorage.setItem("Admin", res.admin);
-																				localStorage.setItem("Status", res.status);
-																				window.setTimeout(3000);
-																				window.location.href = 'dashboard.html'
-																		}else{
-
-																		}
-																	}else{
-																			alert(res.message+ "Please Try Again")
-																			window.location.href = 'login.html' // --> index.html
-																		}
-
-																	}), function(error){
-																		console.log("err")
-																	}
-															});
-														}
-													}
-													
-												}
-											})
-										})
-					}else{
-						alert("Password does't Fill!!\n Please Try Again!!")
-					}
-				}else{
-					alert("Username does't Fill!!\n Please Try Again!!")
-				}
-			}
-
-			// function logdatain() {
-			// 	const sensorData = [
-			// 		{ _id: '2016-11-04T21:55:03.000Z', channel: 'Ch2'},
-			// 		{ _id: '2016-11-04T21:56:03.000Z', channel: 'Ch2'},
-			// 		{ _id: '2016-11-04T21:57:03.000Z', channel: 'Ch2'}
-			// 		];
-
-			// 		// const postUrl = 'http://localhost:3001/login';
-
-			// 		var xhttp = new XMLHttpRequest();
-			// 		if (this.readyState === 4 && this.status === 200) {
-			// 			console.log('Request finished. Do processing here');
-			// 		}
-					
-			// 		xhttp.open('POST', 'http://localhost:3001/login', true)
-			// 		xhttp.setRequestHeader('Content-Type', 'application/json')
-			// 		xhttp.send(JSON.stringify({ data: sensorData }));
-			// }
-
 			
 			
 			

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form>
+        <input type="text" id="name">
+        <button type="button" onclick="getLogin()">Click</button>
+    </form>
+</body>
+
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+<script>
+
+    function getLogin(){
+            var name = document.getElementById("name").value
+            // console.log(name)
+			$(document).ready(function(){
+			$.post("http://co-project1.eg.mahidol.ac.th/test",{name : name})
+                .then(function(res){
+                    console.log(res)
+                })
+            
+            })
+    }
+
+</script>
+</html>

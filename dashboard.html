@@ -65,7 +65,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="dashboard.html" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							Distributed IPS
@@ -91,11 +91,11 @@
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar navbar-pink">
 										<li>
-											<a href="#">
+											<a href="">
 												<div class="clearfix">
 													<span class="pull-left">
 														<i class="btn btn-xs no-hover btn-pink fa fa-exclamation-triangle"></i>
-														New Detect !!
+														All New Detect !!
 													</span>
 													<span class="pull-right badge badge-info">+12</span>
 												</div>
@@ -103,25 +103,28 @@
 										</li>
 										
 										<li>
-											<a href="#">
-												<i class="btn btn-xs btn-primary fa fa-user"></i>
-												New Update By Admin A
+											<a href="tables.html">
+													<i class="fa bigger-110 fa-user">
+															New Update By Raspberry Pi 1
+													</i>
 												<span class="pull-right badge badge-info">+11</span>
 											</a>
 										</li>
 										
 										<li>
-											<a href="#">
-												<i class="btn btn-xs btn-primary fa fa-user"></i>
-												New Update By Admin Arnon
+											<a href="tables_pi2.html">
+													<i class="fa bigger-110 fa-user">
+															New Update By Raspberry Pi 2
+													</i>
 												<span class="pull-right badge badge-info">+12</span>
 											</a>
 										</li>
 										
 										<li>
-											<a href="#">
-												<i class="btn btn-xs btn-primary fa fa-user"></i>
-												New Update By Admin Toonnga
+											<a href="tables_pi3.html">
+													<i class="fa bigger-110 fa-user">
+															New Update By Raspberry Pi 3
+													</i>
 												<span class="pull-right badge badge-info">+8</span>
 											</a>
 										</li>
@@ -131,12 +134,7 @@
 									</ul>
 								</li>
 
-								<li class="dropdown-footer">
-									<a href="#">
-										See all notifications
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
+								
 							</ul>
 						</li>
 
@@ -147,19 +145,15 @@
 								<img class="nav-user-photo" src="assets/images/avatars/avatar2.png" alt="User's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									User
+<!-- User -->							<div id="user"></div>
+									
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
 							</a>
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-cog"></i>
-										Settings
-									</a>
-								</li>
+								
 
 								<li>
 									<a href="profile.html">
@@ -210,75 +204,109 @@
 				</div><!-- /.sidebar-shortcuts -->
 
 				<ul class="nav nav-list">
-					<li class="active">
-						<a href="dashboard.html">
-							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text"> Dashboard </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="isHidden">
-						<a href="admin.php">
-							<i class="menu-icon glyphicon glyphicon-user"></i>
-							Admin
-						</a>
-
-						<b class="arrow"></b>
-                    </li>
-
-                    <li class="isHidden2">
-                            <a href="verify.html">
-                                <i class="menu-icon glyphicon glyphicon-user"></i>
-                                Verify By Admin
-                            </a>
-    
-                            <b class="arrow"></b>
-                    </li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Tables </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="tables.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Raspberry Pi 1
+						<li class="active">
+							<a href="dashboard.html">
+								<i class="menu-icon fa fa-tachometer"></i>
+								<span class="menu-text"> Dashboard </span>
+							</a>
+	
+							<b class="arrow"></b>
+						</li>
+						<!--  -->
+						<li class="isHidden">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon glyphicon glyphicon-user"></i>
+									<span class="menu-text"> Admin Modify </span>
+		
+									<b class="arrow fa fa-angle-down"></b>
 								</a>
-
+		
 								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="table_pi2.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Raspberry Pi 2
-								</a>
-
-								<b class="arrow"></b>
-							</li>
+		
+								<ul class="submenu">
+										<li class="">
+												<a href="add_rule1.php">
+													<i class="menu-icon glyphicon glyphicon-user"></i>
+													Add Rule : Raspberry Pi1
+												</a>
+						
+												<b class="arrow"></b>
+										</li>
+						
+										<li class="">
+												<a href="add_rule2.php">
+													<i class="menu-icon glyphicon glyphicon-user"></i>
+													Add Rule : Raspberry Pi2
+												</a>
+						
+												<b class="arrow"></b>
+										</li>
+	
+										<li class="">
+												<a href="add_rule3.php">
+													<i class="menu-icon glyphicon glyphicon-user"></i>
+													Add Rule : Raspberry Pi3
+												</a>
+						
+												<b class="arrow"></b>
+										</li>
+	
+										<li class="">
+													<a href="verify.html">
+														<i class="menu-icon glyphicon glyphicon-user"></i>
+														Verify By Admin
+													</a>
 							
-							<li class="">
-								<a href="table_pi3.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Raspberry Pi 3
-								</a>
-
-								<b class="arrow"></b>
+													<b class="arrow"></b>
+										</li>
+									
+								</ul>
 							</li>
-							
-						</ul>
-					</li>
-
-				</ul><!-- /.nav-list -->
+						<!--  -->
+	
+	
+						<li class="">
+							<a href="#" class="dropdown-toggle">
+								<i class="menu-icon fa fa-list"></i>
+								<span class="menu-text"> Tables </span>
+	
+								<b class="arrow fa fa-angle-down"></b>
+							</a>
+	
+							<b class="arrow"></b>
+	
+							<ul class="submenu">
+								<li class="">
+									<a href="tables.html">
+										<i class="menu-icon fa fa-caret-right"></i>
+										Raspberry Pi 1
+									</a>
+	
+									<b class="arrow"></b>
+								</li>
+	
+								<li class="">
+									<a href="tables_pi2.html">
+										<i class="menu-icon fa fa-caret-right"></i>
+										Raspberry Pi 2
+									</a>
+	
+									<b class="arrow"></b>
+								</li>
+								
+								<li class="">
+									<a href="tables_pi3.html">
+										<i class="menu-icon fa fa-caret-right"></i>
+										Raspberry Pi 3
+									</a>
+	
+									<b class="arrow"></b>
+								</li>
+								
+							</ul>
+						</li>
+	
+					</ul><!-- /.nav-list -->
 				
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -547,7 +575,7 @@
 
 											<div class="widget-body">
 												<div class="widget-main padding-4">
-													<div id="sales-charts"></div>
+													<div id="chart_div"></div>
 												</div><!-- /.widget-main -->
 											</div><!-- /.widget-body -->
 										</div><!-- /.widget-box -->
@@ -623,13 +651,27 @@
 		<script src="assets/js/jquery.flot.min.js"></script>
 		<script src="assets/js/jquery.flot.pie.min.js"></script>
 		<script src="assets/js/jquery.flot.resize.min.js"></script>
-
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!-- //Chart Stats -->	
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
+
+							
+							$(document).ready(function(){
+						var token = localStorage.getItem("Token")
+						$.post("http://co-project1.eg.mahidol.ac.th/profile/user", 
+						{token:token}).then(function(res,status){
+							console.log(res)
+									$(document).ready(function() {    
+									$('#user')[0].innerHTML +=
+									res.docs.Username
+									
+								})
+						})
+			})
 
 			window.check()
 
@@ -641,14 +683,11 @@
 				if(token){
 					console.log("pass")
                     if(admin==0){
-                        
+                        window.location.href= 'login.html'
                     }else if(admin==1){
 						if(status=="Admin"){
-							var hiddenInput = document.getElementsByClassName("isHidden")
-							var hiddenInput2 = document.getElementsByClassName("isHidden2")
-							// console.log(hiddenInput)
-							hiddenInput[0].style.display = "block"
-							hiddenInput2[0].style.display = "block"
+							var hiddenInput = document.getElementsByClassName("isHidden") //admin menu
+							hiddenInput[0].style.display = "block"  //admin menu
 						}else if(status=="Visitor"){
 
 						}
@@ -660,7 +699,6 @@
 			    }
             }
 
-
 			function logout(){
 				console.log("logout")
 				localStorage.removeItem("Token");
@@ -670,316 +708,215 @@
 					localStorage.removeItem("Admin");
 				}
 				window.location.href= 'login.html'
+			}	
+			
+		//function : Graph Histrogram
+			window.chartHistogram()
+
+			function chartHistogram() {
+					$(document).ready(function(){
+						
+						var amount = []
+						var Rule_id = []
+						var DataPlot = []
+						$.get("http://co-project1.eg.mahidol.ac.th/dashboard/chartHistogram", 
+						{}).then(function(res,status){
+							// console.log(res)
+								res.forEach(element => {
+									var a = element.alert1s
+									var l = Object.keys(a).length
+									amount.push(l)
+								});
+								res.forEach(element => {
+									Rule_id.push(element.Sig_id)
+								});
+							
+
+							var ColHead = ['Device']
+							Rule_id.forEach(element => {
+								ColHead.push(element)
+							});
+
+							var ColDetail = ['All Device']
+							amount.forEach(element => {
+								ColDetail.push(element)
+							});
+
+							// DataPlot.push()
+							DataPlot.push(ColHead)
+							DataPlot.push(ColDetail)
+
+
+							// console.log(DataPlot)
+							
+							//Chart Stats	
+							google.charts.load('current', {'packages':['bar']});
+							google.charts.setOnLoadCallback(drawChart);
+							function drawChart() {
+												var data = google.visualization.arrayToDataTable(DataPlot);
+
+												var options = {
+												chart: {
+													title: 'All Package',
+													subtitle: '',
+												},
+												bars: 'vertical',
+												vAxis: {format: 'decimal'},
+												height: 400,
+												colors: ['#1b9e77', '#d95f02', '#7570b3']
+												};
+
+												var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+												chart.draw(data, google.charts.Bar.convertOptions(options));
+
+												var btns = document.getElementById('btn-group');
+
+												
+							} //drawChart
+					}) //then
+			}) //ready function
+		}
+
+		//function : Graph chartCircle
+			window.chartCircle()
+			function chartCircle(){
+							$(document).ready(function(){
+									// console.log(rule)
+									$.post("http://co-project1.eg.mahidol.ac.th/dashboard/chartCircle1", 
+									{}).then(function(res,status){
+										// console.log("1"+res)
+										var data = []
+										// var data1 = []
+										res.forEach(element => {
+											var l = Object.keys(element.alert1s).length
+											data.push({ label : element.Sig_id , data : l , color: element.Color})
+											// console.log(l)
+										});
+										CircleChart(data,'#piechart-placeholder')
+										
+
+									})//then
+									$.post("http://co-project1.eg.mahidol.ac.th/dashboard/chartCircle2", 
+									{}).then(function(res,status){
+										// console.log("2"+res)
+										var data2 = []
+										// var data1 = []
+										res.forEach(element => {
+											var l = Object.keys(element.alert2s).length
+											data2.push({ label : element.Sig_id , data : l , color: element.Color})
+											// console.log(l)
+										});
+										CircleChart(data2,'#piechart-placeholder2')
+
+									})//then
+									$.post("http://co-project1.eg.mahidol.ac.th/dashboard/chartCircle3", 
+									{}).then(function(res,status){
+										// console.log("3"+res)
+										var data3 = []
+										// var data1 = []
+										res.forEach(element => {
+											var l = Object.keys(element.alert3s).length
+											data3.push({ label : element.Sig_id , data : l , color: element.Color})
+											
+										});
+										CircleChart(data3,'#piechart-placeholder3')
+
+									})//then
+							})//ready
 			}
+		//recursive : chartCircle
+		function CircleChart(data,position){
+			// console.log(data)
+			
+			var placeholder = $(position).css({'width':'90%' , 'min-height':'150px'});
+			
+			// var data = []
 
+			// data.push({ label : 10000005 , data : 25 , color: '#1b9e77'})
 
-			jQuery(function($) {
-				$('.easy-pie-chart.percentage').each(function(){
-					var $box = $(this).closest('.infobox');
-					var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
-					var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
-					var size = parseInt($(this).data('size')) || 50;
-					$(this).easyPieChart({
-						barColor: barColor,
-						trackColor: trackColor,
-						scaleColor: false,
-						lineCap: 'butt',
-						lineWidth: parseInt(size/10),
-						animate: ace.vars['old_ie'] ? false : 1000,
-						size: size
-					});
-				})
-			
-				$('.sparkline').each(function(){
-					var $box = $(this).closest('.infobox');
-					var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
-					$(this).sparkline('html',
-									 {
-										tagValuesAttribute:'data-values',
-										type: 'bar',
-										barColor: barColor ,
-										chartRangeMin:$(this).data('min') || 0
-									 });
-				});
-			
-			
-			  //flot chart resize plugin, somehow manipulates default browser resize event to optimize it!
-			  //but sometimes it brings up errors with normal resize event handlers
-			  $.resize.throttleWindow = false;
-			
-			  var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
-			  var placeholder2 = $('#piechart-placeholder2').css({'width':'90%' , 'min-height':'150px'});
-			  var placeholder3 = $('#piechart-placeholder3').css({'width':'90%' , 'min-height':'150px'});
-			  var data = [
-				{ label: "Packet 1",  data: 38.7, color: "#68BC31"},
-				{ label: "Packet 2",  data: 24.5, color: "#2091CF"},
-				{ label: "Packet 3",  data: 8.2, color: "#AF4E96"},
-				{ label: "Packet 4",  data: 18.6, color: "#DA5430"},
-				{ label: "Packet 5",  data: 10, color: "#FEE074"}
-			  ]
-			  
-			  var data2 = [
-				{ label: "Packet 1",  data: 38.7, color: "#68BC31"},
-				{ label: "Packet 2",  data: 24.5, color: "#2091CF"},
-				{ label: "Packet 3",  data: 8.2, color: "#AF4E96"},
-				{ label: "Packet 4",  data: 18.6, color: "#DA5430"},
-				{ label: "Packet 5",  data: 10, color: "#FEE074"}
-			  ]
-			  
-			  var data3 = [
-				{ label: "Packet 1",  data: 38.7, color: "#68BC31"},
-				{ label: "Packet 2",  data: 24.5, color: "#2091CF"},
-				{ label: "Packet 3",  data: 8.2, color: "#AF4E96"},
-				{ label: "Packet 4",  data: 18.6, color: "#DA5430"},
-				{ label: "Packet 5",  data: 10, color: "#FEE074"}
-			  ]
-			  
-			  
-			  function drawPieChart(placeholder, data, position) {
-			 	  $.plot(placeholder, data, {
-					series: {
-						pie: {
-							show: true,
-							tilt:0.8,
-							highlight: {
-								opacity: 0.25
-							},
-							stroke: {
-								color: '#fff',
-								width: 2
-							},
-							startAngle: 2
+			drawPieChart(placeholder, data);
+			placeholder.data('chart', data);
+			placeholder.data('draw', drawPieChart);
+
+			function drawPieChart(placeholder, data, position) {
+							$.plot(placeholder, data, {
+								series: {
+									pie: {
+										show: true,
+										tilt:0.8,
+										highlight: {
+											opacity: 0.25
+										},
+										stroke: {
+											color: '#fff',
+											width: 2
+										},
+										startAngle: 2
+									}
+								},
+								legend: {
+									show: true,
+									position: position || "ne", 
+									labelBoxBorderColor: null,
+									margin:[-30,15]
+								},
+								grid: {
+									hoverable: true,
+									clickable: true
+								}
+							})
 						}
-					},
-					legend: {
-						show: true,
-						position: position || "ne", 
-						labelBoxBorderColor: null,
-						margin:[-30,15]
-					}
-					,
-					grid: {
-						hoverable: true,
-						clickable: true
-					}
-				 })
-			 }
-			 
-			 function drawPieChart2(placeholder, data, position) {
-			 	  $.plot(placeholder, data, {
-					series: {
-						pie: {
-							show: true,
-							tilt:0.8,
-							highlight: {
-								opacity: 0.25
-							},
-							stroke: {
-								color: '#fff',
-								width: 2
-							},
-							startAngle: 2
+			
+		}
+
+		//Table Rule
+		window.tableRule()
+        function tableRule(){
+            $(document).ready(function(){
+                $.get("http://co-project1.eg.mahidol.ac.th/dashboard/Rule", 
+                {}).then(function(res,status){
+                        console.log(res)
+
+                        if(status!="success"){
+                            console.log("err")
+                        }else{
+                            var len = res.length
+                            console.log("Length = "+len)
+							if(len==0){
+									$(document).ready(function() {    
+									$('table tbody')[0].innerHTML +=
+									"Not Found"
+								})
+							}else{
+									res.forEach(element => {
+									$(document).ready(function() {    
+									$('#dynamic-table tbody')[0].innerHTML +=
+									"<tr>" +
+											"<td>"+
+												// IP Addr
+												element.Type+
+                                            "</td>"+
+                                            "<td>"+
+												// Protocal
+												element.Protocol+
+                                            "</td>"+
+                                            "<td>"+
+												// Date
+												element.Sig_id+
+                                            "</td>"+
+									"</tr>"
+									
+								})
+								});
+									
+							}
 						}
-					},
-					legend: {
-						show: true,
-						position: position || "ne", 
-						labelBoxBorderColor: null,
-						margin:[-30,15]
-					}
-					,
-					grid: {
-						hoverable: true,
-						clickable: true
-					}
-				 })
-			 }
-			 
-			 function drawPieChart3(placeholder, data, position) {
-			 	  $.plot(placeholder, data, {
-					series: {
-						pie: {
-							show: true,
-							tilt:0.8,
-							highlight: {
-								opacity: 0.25
-							},
-							stroke: {
-								color: '#fff',
-								width: 2
-							},
-							startAngle: 2
-						}
-					},
-					legend: {
-						show: true,
-						position: position || "ne", 
-						labelBoxBorderColor: null,
-						margin:[-30,15]
-					}
-					,
-					grid: {
-						hoverable: true,
-						clickable: true
-					}
-				 })
-			 }
-			 
-			 
-			 drawPieChart(placeholder, data);
-			 drawPieChart2(placeholder2, data2);
-			 drawPieChart3(placeholder3, data3);
-			 
-			
-			 /**
-			 we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
-			 so that's not needed actually.
-			 */
-			 placeholder.data('chart', data);
-			 placeholder2.data('chart', data2);
-			 placeholder3.data('chart', data3);
-			 
-			 placeholder.data('draw', drawPieChart);
-			 placeholder2.data('draw', drawPieChart2);
-			 placeholder3.data('draw', drawPieChart3);
-			 
+                })
+            })
+		}		
 			
 			
-			  //pie chart tooltip example
-			  var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
-			  var previousPoint = null;
-			
-			  placeholder.on('plothover', function (event, pos, item) {
-				if(item) {
-					if (previousPoint != item.seriesIndex) {
-						previousPoint = item.seriesIndex;
-						var tip = item.series['label'] + " : " + item.series['percent']+'%';
-						$tooltip.show().children(0).text(tip);
-					}
-					$tooltip.css({top:pos.pageY + 10, left:pos.pageX + 10});
-				} else {
-					$tooltip.hide();
-					previousPoint = null;
-				}
-				
-			 });
-			
-				/////////////////////////////////////
-				$(document).one('ajaxloadstart.page', function(e) {
-					$tooltip.remove();
-				});
-			
-			
-			
-			
-				var d1 = [];
-				for (var i = 0; i < Math.PI * 2; i += 0.5) {
-					d1.push([i, Math.sin(i)]);
-				}
-			
-				var d2 = [];
-				for (var i = 0; i < Math.PI * 2; i += 0.5) {
-					d2.push([i, Math.cos(i)]);
-				}
-			
-				var d3 = [];
-				for (var i = 0; i < Math.PI * 2; i += 0.2) {
-					d3.push([i, Math.tan(i)]);
-				}
-				
-			
-				var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
-				$.plot("#sales-charts", [
-					{ label: "Raspberry Pi 1", data: d1 },
-					{ label: "Raspberry Pi 2", data: d2 },
-					{ label: "Raspberry Pi 3", data: d3 }
-				], {
-					hoverable: true,
-					shadowSize: 0,
-					series: {
-						lines: { show: true },
-						points: { show: true }
-					},
-					xaxis: {
-						tickLength: 0
-					},
-					yaxis: {
-						ticks: 10,
-						min: -2,
-						max: 2,
-						tickDecimals: 3
-					},
-					grid: {
-						backgroundColor: { colors: [ "#fff", "#fff" ] },
-						borderWidth: 1,
-						borderColor:'#555'
-					}
-				});
-			
-			
-				$('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
-				function tooltip_placement(context, source) {
-					var $source = $(source);
-					var $parent = $source.closest('.tab-content')
-					var off1 = $parent.offset();
-					var w1 = $parent.width();
-			
-					var off2 = $source.offset();
-					//var w2 = $source.width();
-			
-					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
-					return 'left';
-				}
-			
-			
-				$('.dialogs,.comments').ace_scroll({
-					size: 300
-			    });
-				
-				
-				//Android's default browser somehow is confused when tapping on label which will lead to dragging the task
-				//so disable dragging when clicking on label
-				var agent = navigator.userAgent.toLowerCase();
-				if(ace.vars['touch'] && ace.vars['android']) {
-				  $('#tasks').on('touchstart', function(e){
-					var li = $(e.target).closest('#tasks li');
-					if(li.length == 0)return;
-					var label = li.find('label.inline').get(0);
-					if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
-				  });
-				}
-			
-				$('#tasks').sortable({
-					opacity:0.8,
-					revert:true,
-					forceHelperSize:true,
-					placeholder: 'draggable-placeholder',
-					forcePlaceholderSize:true,
-					tolerance:'pointer',
-					stop: function( event, ui ) {
-						//just for Chrome!!!! so that dropdowns on items don't appear below other items after being moved
-						$(ui.item).css('z-index', 'auto');
-					}
-					}
-				);
-				$('#tasks').disableSelection();
-				$('#tasks input:checkbox').removeAttr('checked').on('click', function(){
-					if(this.checked) $(this).closest('li').addClass('selected');
-					else $(this).closest('li').removeClass('selected');
-				});
-			
-			
-				//show the dropdowns on top or bottom depending on window height and menu position
-				$('#task-tab .dropdown-hover').on('mouseenter', function(e) {
-					var offset = $(this).offset();
-			
-					var $w = $(window)
-					if (offset.top > $w.scrollTop() + $w.innerHeight() - 100) 
-						$(this).addClass('dropup');
-					else $(this).removeClass('dropup');
-				});
-			
-			})
 		</script>
 	</body>
 </html>

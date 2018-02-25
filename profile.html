@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Tables - Raspberry Pi</title>
+
+		<meta name="description" content="Static &amp; Dynamic Tables" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+		<!-- page specific plugin styles -->
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="assets/js/ace-extra.min.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+		<style>
+				li.isHidden{
+					display : none
+				}
+				li.isHidden2{
+					display : none
+				}
+			</style>
+	</head>
+
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand">
+						<small>
+							<i class="fa fa-leaf"></i>
+							Distributed IPS
+						</small>
+					</a>
+				</div>
+
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+
+						<li class="purple dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-important">10</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-exclamation-triangle"></i>
+									10 Notifications
+								</li>
+
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink">
+										<li>
+											<a href="">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-pink fa fa-exclamation-triangle"></i>
+														All New Detect !!
+													</span>
+													<span class="pull-right badge badge-info">+12</span>
+												</div>
+											</a>
+										</li>
+										
+										<li>
+											<a href="tables.html">
+												<i class="btn btn-xs btn-primary fa fa-user"></i>
+												New Update By Raspberry Pi 1
+												<span class="pull-right badge badge-info">+11</span>
+											</a>
+										</li>
+										
+										<li>
+											<a href="tables_pi2.html">
+												<i class="btn btn-xs btn-primary fa fa-user"></i>
+												New Update By Raspberry Pi 2
+												<span class="pull-right badge badge-info">+12</span>
+											</a>
+										</li>
+										
+										<li>
+											<a href="tables_pi3.html">
+												<i class="btn btn-xs btn-primary fa fa-user"></i>
+												New Update By Raspberry Pi 3
+												<span class="pull-right badge badge-info">+8</span>
+											</a>
+										</li>
+
+
+
+									</ul>
+								</li>
+
+								
+							</ul>
+						</li>
+
+	<!-- Logout -->
+
+						<li class="light-blue dropdown-modal">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="assets/images/avatars/avatar2.png" alt="User's Photo" />
+								<span class="user-info">
+                                    <small>Welcome,</small>
+    <!-- User -->                       <div id="user"></div>
+                                    
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								
+
+								<li>
+									<a href="profile.html">
+										<i class="ace-icon fa fa-user"></i>
+										Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a onclick="logout()">
+										<i class="ace-icon fa fa-power-off" ></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<div class="main-container ace-save-state" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.loadState('main-container')}catch(e){}
+			</script>
+
+			<div id="sidebar" class="sidebar responsive ace-save-state">
+				<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div><!-- /.sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					<li class="active">
+						<a href="dashboard.html">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Dashboard </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+					<!--  -->
+					<li class="isHidden">
+							<a href="#" class="dropdown-toggle">
+								<i class="menu-icon glyphicon glyphicon-user"></i>
+								<span class="menu-text"> Admin Modify </span>
+	
+								<b class="arrow fa fa-angle-down"></b>
+							</a>
+	
+							<b class="arrow"></b>
+	
+							<ul class="submenu">
+									<li class="">
+											<a href="add_rule1.php">
+												<i class="menu-icon glyphicon glyphicon-user"></i>
+												Add Rule : Raspberry Pi1
+											</a>
+					
+											<b class="arrow"></b>
+									</li>
+					
+									<li class="">
+											<a href="add_rule2.php">
+												<i class="menu-icon glyphicon glyphicon-user"></i>
+												Add Rule : Raspberry Pi2
+											</a>
+					
+											<b class="arrow"></b>
+									</li>
+
+									<li class="">
+											<a href="add_rule3.php">
+												<i class="menu-icon glyphicon glyphicon-user"></i>
+												Add Rule : Raspberry Pi3
+											</a>
+					
+											<b class="arrow"></b>
+									</li>
+
+									<li class="">
+												<a href="verify.html">
+													<i class="menu-icon glyphicon glyphicon-user"></i>
+													Verify By Admin
+												</a>
+						
+												<b class="arrow"></b>
+									</li>
+								
+							</ul>
+						</li>
+					<!--  -->
+
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> Tables </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="tables.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Raspberry Pi 1
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="tables_pi2.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Raspberry Pi 2
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+							<li class="">
+								<a href="tables_pi3.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Raspberry Pi 3
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+						</ul>
+					</li>
+
+				</ul><!-- /.nav-list -->
+
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>
+
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="dashboard.html">Home</a>
+							</li>
+
+							<li>
+								<a href="profile.html">Profile</a>
+							</li>
+						</ul><!-- /.breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- /.nav-search -->
+					</div>
+
+					<div class="page-content">
+
+						<div class="page-header">
+							<h1>
+								Profile
+							</h1>
+						</div><!-- /.page-header -->
+
+
+
+
+
+
+ <!--  jQuery dataTables -->
+								
+
+
+								<div class="row">
+									<div class="col-xs-12">
+
+										
+									<form>
+										<div class="table-detail">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-2">
+                                                        <div class="text-center">
+                                                            <img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
+                                                            <br />
+                                                            <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                                                                <div class="inline position-relative">
+                                                                    <a class="user-title-label" href="#">
+                                                                        <i class="ace-icon fa fa-circle light-green"></i>
+                                                                        &nbsp;
+                                                                        <span id="username"class="white"></span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-7">
+                                                        <div class="space visible-xs"></div>
+
+                                                        <div class="profile-user-info profile-user-info-striped">
+                                                            <div class="profile-info-row">
+                                                                <div class="profile-info-name"> Username </div>
+
+                                                                <div class="profile-info-value">
+                                                                    <span id="username1"></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row">
+                                                                <div class="profile-info-name"> Email </div>
+
+                                                                <div class="profile-info-value">
+                                                                    <i class="fa bigger-110">
+                                                                            <!-- <span><input type="text" placeholder="Email"></span> -->
+                                                                            <span id="email"></span>
+                                                                    </i>
+                                                                    <!-- <span>NakornPathom, Thailand</span> -->
+                                                                    
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row">
+                                                                <div class="profile-info-name"> Age </div>
+
+                                                                <div class="profile-info-value">
+                                                                        <i class="fa bigger-110">
+                                                                                <!-- <span><input id="age" type="text" placeholder="Age"></span> -->
+                                                                                <span id="age"></span>
+                                                                    
+                                                                        </i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row">
+                                                                <div class="profile-info-name"> Gender </div>
+
+                                                                <div class="profile-info-value">
+                                                                        <i class="fa bigger-110">
+                                                                                <!-- <span><input id="gender" type="text" placeholder="Gender"></span> -->
+                                                                                <span id="gender"></span>
+                                                                                
+                                                                        </i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row">
+                                                                <div class="profile-info-name"> Joined </div>
+
+                                                                <div class="profile-info-value">
+                                                                        <i class="fa bigger-110">
+                                                                                <span id="join"></span>
+                                                                        </i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row">
+                                                                <div class="profile-info-name"> About Me </div>
+
+                                                                <div class="profile-info-value">
+                                                                        <i class="fa bigger-110">
+                                                                                <!-- <span><input id="aboutme" type="text" placeholder="About Me"></span> -->
+                                                                                <span id="aboutme"></span>
+                                                                        </i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="container">
+                                                        <button type="button" class="btn btn-primary" onclick="Update()">Update</button>
+                                                    </div>
+                                            </div>
+                                        </form>
+                                            
+                                            
+                                    </div>
+                                    
+								</div>
+
+								
+
+								<!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Distributed IPS</span>
+							Application &copy; 2017
+						</span>
+						
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<script src="assets/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery-ui.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/jquery.easypiechart.min.js"></script>
+		<script src="assets/js/jquery.sparkline.index.min.js"></script>
+		<script src="assets/js/jquery.flot.min.js"></script>
+		<script src="assets/js/jquery.flot.pie.min.js"></script>
+		<script src="assets/js/jquery.flot.resize.min.js"></script>
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+
+		<script type="text/javascript">
+			window.check()
+
+			window.check()
+
+			function check(){
+				console.log("check")
+				var token = localStorage.getItem("Token")
+				var admin = localStorage.getItem("Admin")
+				var status = localStorage.getItem("Status")
+				if(token){
+					console.log("pass")
+					if(admin==0){
+						window.location.href= 'login.html'
+					}else if(admin==1){
+						if(status=="Admin"){
+							var hiddenInput = document.getElementsByClassName("isHidden") //admin menu
+							hiddenInput[0].style.display = "block"  //admin menu
+						}else if(status=="Visitor"){
+
+						}
+						
+					}
+				}else{
+					window.location.href= 'login.html'
+				
+				}
+			}
+			
+			function logout(){
+				console.log("logout")
+				localStorage.removeItem("Token");
+				localStorage.removeItem("Status");
+				var admin = localStorage.getItem("Admin")
+				if(admin){
+					localStorage.removeItem("Admin");
+				}
+				window.location.href= 'login.html'
+			}
+
+		</script>
+        <script>
+            $(document).ready(function(){
+						var token = localStorage.getItem("Token")
+						$.post("http://co-project1.eg.mahidol.ac.th/profile/user", 
+						{token:token}).then(function(res,status){
+							console.log(res)
+									$(document).ready(function() {    
+									$('#user')[0].innerHTML +=
+									res.docs.Username
+									
+								})
+						})
+			})
+
+            function Update(){
+                $(document).ready(function(){
+                    var age = document.getElementById("age1").value
+                    var gender = document.getElementById("gender1").value
+                    var aboutme = document.getElementById("aboutme1").value
+                    var token = localStorage.getItem("Token")
+                    console.log(age+" "+gender+" "+aboutme+" ")
+                $.post("http://co-project1.eg.mahidol.ac.th/profile/user/update", 
+                {age:age,gender:gender,aboutme:aboutme,token:token}).then(function(res,status){
+                    
+                
+                })
+            })
+            window.setTimeout(3000);
+            window.location.href = 'profile.html'
+            }
+
+
+            $(document).ready(function(){
+						var token = localStorage.getItem("Token")
+						$.post("http://co-project1.eg.mahidol.ac.th/profile/user", 
+						{token:token}).then(function(res,status){
+							console.log(res)
+									$(document).ready(function() {    
+									$('#username')[0].innerHTML +=
+									res.docs.Username
+                                    $('#username1')[0].innerHTML +=
+									res.docs.Username
+                                    $('#email')[0].innerHTML +=
+									res.docs.Email
+                                    $('#join')[0].innerHTML +=
+									res.docs.reg_time
+                                    if(res.docs.Age==null){
+                                        $('#age')[0].innerHTML +=
+                                        res.docs.Age
+                                    }else{
+                                        $('#age')[0].innerHTML +=
+                                        "<input id=\"age1\" type=\"text\" placeholder=\"Age\">"
+                                    }
+                                    if(res.docs.Gender==null){
+                                        $('#gender')[0].innerHTML +=
+                                        res.docs.Gender
+                                    }else{
+                                        $('#gender')[0].innerHTML +=
+                                        "<input id=\"gender1\" type=\"text\" placeholder=\"Gender\">"
+                                    }
+                                    if(res.docs.Aboutme==null){
+                                        $('#aboutme')[0].innerHTML +=
+                                        res.docs.Aboutme
+                                    }else{
+                                        $('#aboutme')[0].innerHTML +=
+                                        "<input id=\"aboutme1\" type=\"text\" placeholder=\"Aboutme\">"
+                                    }
+								})
+						})
+			})
+
+       
+
+
+        </script>
+	</body>
+</html>
